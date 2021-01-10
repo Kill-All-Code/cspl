@@ -1,0 +1,20 @@
+import java.util.Scanner;  
+public class Main {
+	static Scanner in;
+	static int n;
+	static int c;	
+	
+	public static void main(String[] args) {		
+            in=new Scanner(System.in);
+			n=in.nextInt(); 
+			int a,b,c,d,e;
+			n=n/10;
+			a=n/5;
+			b=n%5;
+			d=b/3;
+			e=b%3;
+			c=a*7+d*4+e;
+			System.out.println(c);
+			}
+
+	}
