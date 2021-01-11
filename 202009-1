@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n,x,y;
+		n=sc.nextInt();
+		x=sc.nextInt();
+		y=sc.nextInt();
+		int[][] array= new int[n][2];
+		for (int i = 0; i < n; i++) {
+			array[i][0]=sc.nextInt();
+			array[i][1]=sc.nextInt();
+		}
+		double jlong,count;
+		int[] min=new int[3];
+		for(int j=0;j<3;j++) {
+			count=1420;
+			for (int i = 0; i < n; i++) {
+				jlong=Math.sqrt(Math.pow((x-array[i][0]),2)+Math.pow((y-array[i][1]),2));
+//				System.out.println("第"+i+"个点的距离为"+jlong);
+				if (jlong<count) {
+					count=jlong;
+					min[j]=i;
+				}
+			}
+			
+		System.out.println(min[j]+1);
+		array[min[j]][0]=x-1001;
+		array[min[j]][1]=x-1001;
+		}
+    }
+}
