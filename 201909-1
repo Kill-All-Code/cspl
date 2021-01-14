@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		int n,m;
+		int c=0,C=0,max=0,t=0,maxi=0;
+		Scanner sc=new Scanner(System.in);
+		n=sc.nextInt();
+		m=sc.nextInt();
+		int array[][]=new int[n][m+1];
+		for(int i=0;i<n;i++)
+		{
+			c=0;
+			t=0;
+			for(int j=0;j<m+1;j++)
+			{
+				array[i][j]=sc.nextInt();
+				c=c+array[i][j];
+				{
+					if(j!=0)
+					{
+						t=t-array[i][j];
+					}
+				}
+				
+			}
+			if(max<t) {
+				max=t;
+				maxi=i+1;
+			}
+			C=C+c;
+		}
+		System.out.printf("%d %d %d",C,maxi,max);
+		
+		
+		
+		
+	}
+	
+
+}
