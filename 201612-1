@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner cin=new Scanner(System.in);
+		int n,a,b;
+		a=b=0;
+		int out=-1;
+		n=cin.nextInt();
+		int array[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			array[i]=cin.nextInt();			
+			
+		}
+		for (int i = 0; i < array.length; i++) {
+			for(int j=0;j<n;j++)
+			{
+				if(array[j]<array[i])
+				{
+					a++;
+				}
+				if(array[j]>array[i])
+				{
+					b++;
+				}
+			}
+			if(a==b)
+			{
+				out=array[i];
+			}
+			a=b=0;
+		}
+		System.out.println(out);
+
+	}
+
+}
