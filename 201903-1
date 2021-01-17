@@ -1,0 +1,53 @@
+#include<stdio.h>
+int main(){
+	int n,m,min,mid,max;
+		scanf("%d",&n);	
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&m);
+		if(i==0)
+		min=m;
+		if(i==n-1)
+		max=m;
+		if(n%2==1&i==n/2)
+		mid=m;
+		if(n%2==0&i==n/2-1)
+		mid=m;
+		if(n%2==0&i==n/2)
+		mid=mid+m;
+	}
+	if(min>max)
+	{
+		m=min;
+		min=max;
+		max=m;
+	}
+	float out;
+	if(n%2==1)
+	{
+		printf("%d %d %d",max,mid,min);
+	}
+	else
+	{
+		if(mid%2==0)
+		{
+			mid=mid/2;
+			printf("%d %d %d",max,mid,min);			
+		}
+		else
+		{
+		
+//			if(mid>0)
+//			{
+//			out=mid/2.0;
+//			printf("%d %.1f %d",max,out,min);	
+//			}
+//			if(mid<0){
+//			out=(int)(mid*10+0.5)/20.0;
+			out=mid/2.0;
+			printf("%d %.1f %d",max,out,min);
+//			}	
+		}
+	}
+	return 0;
+} 
