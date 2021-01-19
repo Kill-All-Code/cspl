@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int n,out;
+		int c[]=new int[7];
+		out=0;
+		char r;
+		r=' ';
+		n=in.nextInt();
+		String array[]=new String[n];
+		for(int i=0;i<n;i++)
+		{
+			array[i]=in.next().intern();
+		}
+		for (int i = 0; i < array.length; i++) {
+//			System.out.println(array[i]);
+			for(int j=0;j<7;j++)
+			{
+				
+				if(j==0|j==2|j==4|j==6)
+				{
+					c[j]=(int)array[i].charAt(j)-48;
+					if(r=='x'&j>=2)
+					{
+						c[j]=c[j]*c[j-2];
+						c[j-2]=0;
+					}			
+					if(r=='/'&j>=2)
+					{
+						c[j]=c[j-2]/c[j];
+						c[j-2]=0;
+					}					
+					if(r=='-'&j>=2)
+					{
+						c[j]=-c[j];
+					}
+				}
+				if(j==1|j==3|j==5)
+				{
+					r=array[i].charAt(j);
+
+				}
+			}
+			out=c[0]+c[2]+c[4]+c[6];
+//			System.out.println(c[0]);
+//			System.out.println(c[2]);
+//			System.out.println(c[4]);
+//			System.out.println(c[6]);
+//			System.out.println(out);
+			if(out==24)
+			{
+				System.out.println("Yes");
+			}
+			else
+				System.out.println("No");
+		}
+	}
+
+}
