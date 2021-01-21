@@ -1,0 +1,73 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner in= new Scanner(System.in);
+		long r,y,g,n,a,b;
+		long c,t;
+		c=0;
+		r=in.nextLong();
+		y=in.nextLong();
+		g=in.nextLong();
+		n=in.nextLong();
+		for(int i=0;i<n;i++)
+		{
+			a=in.nextLong();
+			b=in.nextLong();
+			t=c%(r+y+g)-b;
+			if(a==0)
+			{
+				c=c+b;
+			}
+			if(a==1)
+			{
+				if(t<0)//红灯
+				{
+					c=c-t;
+				}
+//				if(t<g&t>0)//绿灯
+//				{
+					
+//				}
+				if(t>g&t<g+y)//黄灯
+				{
+					c=c+g+y+r-t;				
+				}
+				if(t>g+y&t<g+y+r)//红灯
+				{
+					c=c+g+y+r-t;
+				}
+			}
+			if(a==2)
+			{
+				if(t<0)//黄灯
+				{
+					c=c-t+r;
+				}
+				if(t<r&t>0)//红灯
+				{
+					c=c+r-t;
+				}
+				if(t>g+r&t<g+y+r)//黄灯
+				{
+					c=c+g+y+r+r-t;
+				}
+				
+			}
+			if(a==3)
+			{
+				if(t<y&t>0)//黄灯
+				{
+					c=c+r+y-t;
+				}
+				if(t>y&t<y+r)///红灯
+				{
+					c=c+y+r-t;
+				}
+			}
+		}
+		System.out.println(c);
+	}
+
+}
