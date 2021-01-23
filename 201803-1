@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner in=new Scanner(System.in);
+		int put,out,c;
+		out=0;
+		c=2;
+		for(;;)
+		{
+			put=in.nextInt();
+			if(put==0)
+			{
+				break;
+			}
+			if(put==1)
+			{
+				out=out+1;
+				c=2;
+			}
+			if(put==2)
+			{
+				
+				out=out+c;
+				c=c+2;
+			}
+		}
+		System.out.println(out);
+	}
+
+}
