@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+
+
+		static class Node{
+			Node next;
+			int data;
+			Node(int data)
+			{
+				this.data=data;
+			}		
+		}
+
+
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner in =new Scanner(System.in);
+		int n=0,k=0;
+		int c=0,a=0;
+		n=in.nextInt();
+        k=in.nextInt();
+        Node first=new Node(1);
+        first.next=first;
+        Node p=first;       
+        for(int i=2;i<=n;i++)
+        {
+        	Node temp=new Node(i);
+        	p.next=temp;
+        	p=p.next;
+        }
+        p.next=first;
+		for(/*p=first*/;p!=p.next;c++)
+		{
+			a=c+1;
+			if(a%k==0||a%10==k||a%100==k)
+			{
+//				System.out.println("报数"+a);
+//				System.out.println(p.next.data+"号被淘汰");
+				p.next=p.next.next;
+	
+
+
+			}
+			else
+			p=p.next;
+
+
+		}
+		System.out.println(p.data);
+	}
+
+}
