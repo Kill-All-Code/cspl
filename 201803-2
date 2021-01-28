@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class Main {
+//	class Main{
+		Integer location;
+		Integer face;
+		Main(){
+			face=1;
+			location=0;
+		}
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		int n,L,t;
+		n=in.nextInt();
+		L=in.nextInt();
+		t=in.nextInt();
+
+		Main Main[]=new Main[n];
+		for(int i=0;i<n;i++)
+		{
+			Main[i]=new Main();
+			Main[i].location=in.nextInt();
+			
+		}
+//		System.out.println("运行到这");
+		for(int k=0;k<t;k++)
+		{
+			for(int i=0;i<n;i++)
+			{
+				if(Main[i].face==1)
+				{
+					Main[i].location++;
+					if(Main[i].location==L)
+					{
+						Main[i].face*=-1;
+					}
+
+				}
+				else
+				{
+					Main[i].location--;
+					if(Main[i].location==0)
+					{
+						Main[i].face*=-1;					
+					}
+				}
+				
+			}
+			for(int i=0;i<n-1;i++)
+				for(int j=i+1;j<n;j++)
+				{
+					if(Main[i].location.equals(Main[j].location))
+					{
+						Main[i].face*=-1;
+						Main[j].face*=-1;
+						break;
+					}
+				}
+			
+		}
+		for(int i=0;i<n;i++)
+		{
+			System.out.printf("%d ",Main[i].location);
+		}
+		
+		
+	}
+}
