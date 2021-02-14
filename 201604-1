@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner in= new Scanner(System.in);
+		int n=in.nextInt();
+		int a,b,c;
+		a=b=c=in.nextInt();
+		int count=0;
+		for(int i=1;i<n;i++)
+		{
+			c=in.nextInt();
+			if(i>=2)
+			if(a<b&&c<b||a>b&&c>b)
+			{
+				count++;
+			}
+			a=b;
+			b=c;	
+		}
+		System.out.println(count);
+	}
+
+}
