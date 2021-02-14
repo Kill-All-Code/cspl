@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner in = new Scanner(System.in);
+		int n= in.nextInt();
+		int a,b,count=0;
+		while(n>=10)
+		{
+			a=n%10;
+			n=n/10;
+			count+=a;
+		}
+		count+=n;
+		System.out.println(count);
+		
+	}
+
+}
