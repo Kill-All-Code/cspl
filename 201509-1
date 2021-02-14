@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner in = new Scanner(System.in);
+		int n=in.nextInt();
+		int count=1;
+		int a;
+		int b=in.nextInt();
+		for(int i=1;i<n;i++)
+		{
+			a=in.nextInt();
+			if(a!=b)
+			{
+				b=a;
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+
+}
