@@ -1,0 +1,82 @@
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		Scanner in = new Scanner(System.in);
+		int n,m;
+		n=in.nextInt();
+		m=in.nextInt();
+		type typearray[] = new type[n];
+		for(int i=1;i<n+1;i++)
+		{
+			typearray[i-1]= new type();
+			typearray[i-1].h=in.nextInt();
+			typearray[i-1].z=in.nextInt();
+			typearray[i-1].t=in.next().charAt(0);
+		}
+		for(int j=0;j<m;j++)
+		{
+			int a = in.nextInt();
+			int b = in.nextInt();
+			int c = in.nextInt();
+			boolean R;
+			boolean result=true;
+			if(typearray[0].t=='A')
+			{
+				if(a+b*typearray[0].h+c*typearray[0].z>0)
+				{
+					R=true;
+				}
+				else
+					R=false;
+			}
+			else
+			{
+				if(a+b*typearray[0].h+c*typearray[0].z>0)
+				{
+					R=false;
+				}
+				else
+					R=true;
+			}
+//			System.out.println(R);	
+			for(int i=1;i<n;i++)
+			{
+				if(typearray[i].t=='A')
+				{
+//					System.out.println(a+b*typearray[i].h+c*typearray[i].z);
+					if(R==true&&a+b*typearray[i].h+c*typearray[i].z<0)
+						result=false;
+					if (R==false&&a+b*typearray[i].h+c*typearray[i].z>0)						
+						result=false;
+				}
+				else
+				{
+					if(R==false&&a+b*typearray[i].h+c*typearray[i].z<0)
+						result=false;
+					if(R==true&&a+b*typearray[i].h+c*typearray[i].z>0)
+						result=false;
+				}
+			}
+			
+			if(result==true)
+			{
+				System.out.println("Yes");
+			}
+			else
+			{
+				System.out.println("No");
+			}
+		}
+	}
+
+}
+class type{
+	int h;
+	int z;
+	char t;
+//	type(){
+//		
+//	}
+}
